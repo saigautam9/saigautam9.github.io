@@ -68,6 +68,37 @@ export const whatIDo = [
 
 export const projects = [
   {
+    title: "Real-Time Fraud Detection Pipeline",
+    tracks: ["DE", "AI", "DA"],
+    featured: true,
+    summary:
+      "A streaming medallion lakehouse on Databricks feeding a governed Snowflake serving layer and a Power BI dashboard. Transactions land via Auto Loader, pass a quality gate that quarantines bad records with reason codes, get scored by rules and a Random Forest, and surface as an analyst alert queue. The build was the easy part — most of the work was verifying it was actually correct, and it wasn't, six times.",
+    techniques:
+      "Structured Streaming with a verified watermark, Delta MERGE for idempotent incremental writes, quarantine pattern with reason taxonomy, cross-platform row reconciliation, Unity Catalog column masks, time-based train/test split, four-configuration engine benchmark.",
+    stats: [
+      "308,338 = 302,135 silver + 6,203 quarantined — reconciles exactly",
+      "740 of 743 hourly windows emitted — the 3 withheld prove the watermark is real",
+      "2,515 alerts at 0.83% of traffic, 99.3% precision (down from 25% at 8.7%)",
+      "PR-AUC 0.983 · 16 false positives across 70,914 legitimate transactions",
+      "Snowflake 2.4–8.4× faster on price-matched warehouses — after 3 corrected benchmarks",
+    ],
+    tags: [
+      "Databricks",
+      "Auto Loader",
+      "Delta Lake",
+      "Structured Streaming",
+      "Unity Catalog",
+      "PySpark",
+      "MLflow",
+      "Snowflake",
+      "Power BI",
+    ],
+    repo: "https://github.com/saigautam9/fraud-detection-pipeline",
+    image: "fraud_dashboard.png", // lives in /public
+    imageCaption:
+      "Power BI on the Snowflake gold layer — 302K transactions, fraud concentrated entirely in TRANSFER and CASH_OUT, and account identifiers rendering as ***MASKED*** because the BI role sits outside the Snowflake masking policy.",
+  },
+  {
     title: "Manufacturing Analytics Lakehouse",
     tracks: ["DE", "DA", "AI"],
     featured: true,
