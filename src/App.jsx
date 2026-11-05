@@ -3,7 +3,6 @@ import {
   profile,
   whatIDo,
   projects,
-  experience,
   skills,
   TRACKS,
 } from "./data.js";
@@ -13,7 +12,6 @@ const NAV = [
   { id: "about", label: "About" },
   { id: "what-i-do", label: "What I Do" },
   { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
@@ -146,7 +144,6 @@ function Hero() {
     { href: profile.github, label: "GitHub", primary: false },
     { href: profile.linkedin, label: "LinkedIn", primary: false },
     { href: `mailto:${profile.email}`, label: "Email", primary: true },
-    { href: profile.resume, label: "Resume (PDF)", primary: false },
   ];
 
   return (
@@ -233,13 +230,6 @@ function About() {
             Based in
           </dt>
           <dd className="mt-2 text-ink">{profile.location}</dd>
-
-          <dt className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-            Currently
-          </dt>
-          <dd className="mt-2 text-ink">
-            {experience[0].role} at {experience[0].company}
-          </dd>
         </dl>
       </div>
     </Section>
@@ -407,50 +397,6 @@ function Projects() {
   );
 }
 
-/* ----------------------------------------------------------- experience -- */
-
-function Experience() {
-  return (
-    <Section id="experience">
-      <SectionHeading eyebrow="Experience" title="Where I've done this" />
-      <div className="space-y-5">
-        {experience.map((job) => (
-          <article
-            key={job.company}
-            className="rounded-lg border border-line bg-white p-6 sm:p-7"
-          >
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="text-lg font-semibold text-ink">{job.company}</h3>
-              <p className="font-mono text-[12px] tabular-nums text-muted">
-                {job.period} · {job.place}
-              </p>
-            </div>
-            <p className="mt-1 text-sm font-medium text-accent">{job.role}</p>
-
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed">
-              {job.points.map((pt) => (
-                <li key={pt} className="flex gap-2.5">
-                  <span
-                    className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-accent"
-                    aria-hidden="true"
-                  />
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {job.tags.map((t) => (
-                <Tag key={t}>{t}</Tag>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* --------------------------------------------------------------- skills -- */
 
 function Skills() {
@@ -549,7 +495,6 @@ export default function App() {
         <About />
         <WhatIDo />
         <Projects />
-        <Experience />
         <Skills />
         <Contact />
       </main>

@@ -15,7 +15,6 @@ export const profile = {
   email: "kvnsaigautam@gmail.com",
   github: "https://github.com/saigautam9",
   linkedin: "https://linkedin.com/in/saigautamk",
-  resume: "resume.pdf", // drop the PDF into /public with this filename
   about: [
     "I work across the full data lifecycle rather than one slice of it. That means the same project can start with raw ingestion and end at a dashboard a stakeholder actually opens on Monday morning — bronze/silver/gold pipelines, the models that sit on top of them, and the reporting layer that makes the result legible.",
     "My background is a mix of platform engineering for retail clients, analytics engineering at an AI startup, and reporting work for pharmaceutical and healthcare clients. That range is why I look at a problem as a system: where the data comes from, how it breaks, what it needs to answer, who is allowed to see it, and who has to trust the result.",
@@ -240,73 +239,6 @@ export const projects = [
     stats: ["PR #1133 · 5 unit tests"],
     tags: ["Python", "Quix Streams", "Stream processing", "Unit testing"],
     repo: "https://github.com/quixio/quix-streams/pull/1133",
-  },
-];
-
-export const experience = [
-  {
-    company: "SPM Strategic LLC",
-    role: "Data Engineer",
-    period: "Feb 2026 — Present",
-    place: "San Jose, CA",
-    points: [
-      "Automated data pipelines for a retail client, integrating sales, order-management, inventory, and waste-management data into one centralized analytics environment.",
-      "Integrated retail source-system data with Fivetran ingestion pipelines, then built automated ETL in Python, SQL, Databricks, and Microsoft Fabric with incremental Delta-table processing to clean, transform, and validate it.",
-      "Built revenue and order-management dashboards tracking total revenue, average order value, product performance, order volume, margins, and store-level trends — cutting reporting turnaround by about 25%.",
-      "Developed waste-management analytics that pinpointed high-waste products and operations, cutting waste-related losses by about 15%, and governed access with Unity Catalog, Entra ID role-based permissions, and private endpoints.",
-    ],
-    tags: [
-      "Databricks",
-      "Microsoft Fabric",
-      "Delta Lake",
-      "Fivetran",
-      "Python",
-      "SQL",
-      "Unity Catalog",
-      "Entra ID (RBAC)",
-      "Power BI",
-    ],
-  },
-  {
-    company: "VeraAI Technologies",
-    role: "Data & Analytics Engineer (Backend)",
-    period: "Aug 2025 — Dec 2025",
-    place: "San Jose, CA",
-    points: [
-      "Built a centralized analytics solution in Microsoft Fabric, using Fabric Lakehouse and OneLake to consolidate structured business, product-catalog, and material data.",
-      "Developed Data Factory pipelines to ingest and automate data movement from multiple sources, and used Databricks and Spark with Delta tables to clean, transform, join, aggregate, and validate large catalog and operational datasets with incremental processing.",
-      "Built Power BI dashboards in Fabric with semantic models — relationships, measures, KPIs — analyzing material usage, product categories, catalog activity, and revenue, reducing manual reporting effort by about 25%.",
-      "Configured OneLake security and role-based access, and used Unity Catalog for table/schema permissions and data lineage across Databricks and Fabric; integrated external sources with Fivetran and secured connectivity with Entra ID and private endpoints.",
-    ],
-    tags: [
-      "Microsoft Fabric",
-      "OneLake",
-      "Data Factory",
-      "Databricks",
-      "Spark",
-      "Delta Lake",
-      "Power BI",
-      "Semantic models",
-      "Unity Catalog",
-    ],
-  },
-  {
-    company: "Net Orbit Inc.",
-    role: "Data Analyst",
-    period: "Jul 2022 — Dec 2023",
-    place: "Hyderabad, India",
-    points: [
-      "Built ETL/ELT pipelines from ERP and source systems with dimensional data modeling and quality checks, tuning SQL and cutting report turnaround by 30%.",
-      "Delivered 15+ Power BI and Tableau dashboards and automated reporting for stakeholders, reducing manual effort by 60% and improving process efficiency by 15%.",
-    ],
-    tags: [
-      "SQL",
-      "Python",
-      "ETL",
-      "Power BI",
-      "Tableau",
-      "Dimensional modeling",
-    ],
   },
 ];
 
